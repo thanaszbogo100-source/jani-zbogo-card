@@ -3,121 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>Jani Zbogo</title>
+<title>Jani Zbogo's Card</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: #e4e8ec;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 28px;
-  }
-
-  .card {
-    background: #0D1B2A;
-    color: #E8EDF3;
-    border-radius: 24px;
-    padding: 36px 30px 30px;
-    width: 100%;
-    max-width: 360px;
-    animation: up .45s ease both;
-  }
-
-  .bar {
-    width: 36px;
-    height: 3px;
-    background: #4A9EFF;
-    border-radius: 2px;
-    margin-bottom: 26px;
-  }
-
-  .name {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    line-height: 1.15;
-    margin-bottom: 6px;
-  }
-
-  .role {
-    font-size: 11px;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    opacity: .5;
-    margin-bottom: 4px;
-  }
-
-  .company {
-    font-size: 14px;
-    font-weight: 500;
-    opacity: .75;
-    margin-bottom: 32px;
-  }
-
-  .divider {
-    height: 1px;
-    background: rgba(255,255,255,0.1);
-    margin-bottom: 24px;
-  }
-
-  .contacts {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin-bottom: 32px;
-  }
-
-  .contact-row {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    text-decoration: none;
-    color: inherit;
-    font-size: 14px;
-    transition: opacity .2s;
-  }
-
+  body { font-family: 'DM Sans', sans-serif; background: #e4e8ec; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 28px; }
+  .card { background: #0D1B2A; color: #E8EDF3; border-radius: 24px; padding: 36px 30px 30px; width: 100%; max-width: 360px; animation: up .45s ease both; }
+  .bar { width: 36px; height: 3px; background: #4A9EFF; border-radius: 2px; margin-bottom: 26px; }
+  .name { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 500; letter-spacing: -0.01em; line-height: 1.15; margin-bottom: 6px; }
+  .role { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; opacity: .5; margin-bottom: 4px; }
+  .company { font-size: 14px; font-weight: 500; opacity: .75; margin-bottom: 32px; }
+  .divider { height: 1px; background: rgba(255,255,255,0.1); margin-bottom: 24px; }
+  .contacts { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
+  .contact-row { display: flex; align-items: center; gap: 14px; text-decoration: none; color: inherit; font-size: 14px; transition: opacity .2s; cursor: pointer; }
   .contact-row:hover { opacity: .7; }
-
-  .icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .save-btn {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    text-align: center;
-    background: #4A9EFF;
-    color: #0D1B2A;
-    border-radius: 12px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: .05em;
-    text-decoration: none;
-    transition: opacity .2s;
-  }
-
+  .icon { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .save-btn { display: block; width: 100%; padding: 15px; text-align: center; background: #4A9EFF; color: #0D1B2A; border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: .05em; text-decoration: none; transition: opacity .2s; }
   .save-btn:hover { opacity: .85; }
-
-  @keyframes up {
-    from { opacity: 0; transform: translateY(14px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+  @keyframes up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
 </style>
 </head>
 <body>
@@ -134,16 +37,30 @@
       </div>
       +355 69 20 90 613
     </a>
-    <a href="mailto:zbogoja@yahoo.com" class="contact-row">
+    <a id="emailRow" class="contact-row">
       <div class="icon">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8EDF3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
       </div>
-      zbogoja@yahoo.com
+      <span id="emailDisplay"></span>
     </a>
   </div>
-  <a class="save-btn" href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AFN%3AJani%20Zbogo%0AN%3AZbogo%3BJani%3B%3B%3B%0ATITLE%3ACEO%0AORG%3AZbogo%20Ja%0ATEL%3A%2B355692090613%0AEMAIL%3Azbogoja%40yahoo.com%0AEND%3AVCARD" download="Jani_Zbogo.vcf">
-    Save contact
-  </a>
+  <a id="saveBtn" class="save-btn" download="Jani_Zbogo.vcf">Save contact</a>
 </div>
+<script>
+  var u = 'zbogoja';
+  var d = 'yahoo' + '.' + 'com';
+  var email = u + '@' + d;
+  document.getElementById('emailDisplay').textContent = email;
+  document.getElementById('emailRow').href = 'mail' + 'to:' + email;
+  var vcard = [
+    'BEGIN:VCARD','VERSION:3.0',
+    'FN:Jani Zbogo','N:Zbogo;Jani;;;',
+    'TITLE:CEO','ORG:Zbogo Ja',
+    'TEL:+355692090613',
+    'EMAIL:' + email,
+    'END:VCARD'
+  ].join('\n');
+  document.getElementById('saveBtn').href = 'data:text/vcard;charset=utf-8,' + encodeURIComponent(vcard);
+</script>
 </body>
 </html>
